@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ColorBox from './ColorBox';
 import Slider from 'rc-slider';
-import './Palette.css';
 import 'rc-slider/assets/index.css';
+import './Palette.css'; // override the default CSS of rc-slider
 
 class Palette extends Component {
   state = { level: 500 };
@@ -26,6 +26,7 @@ class Palette extends Component {
           max={900}
           step={100}
           onAfterChange={this.changeLevel}
+          className="slider"
         />
         <div className="Palette-colors">{colorBoxes}</div>
         {/* footer */}

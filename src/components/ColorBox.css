@@ -37,15 +37,6 @@
   text-transform: uppercase;
 }
 
-.copy-button {
-  opacity: 0;
-}
-
-.ColorBox:hover .copy-button {
-  opacity: 1;
-  transition: 0.5s;
-}
-
 .box-content {
   width: 100%;
   left: 0;
@@ -55,28 +46,6 @@
   font-size: 12px;
   letter-spacing: 1px;
   position: absolute;
-  text-transform: uppercase;
-}
-
-.light-text {
-  color: white;
-}
-
-.ColorBox .dark-text {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.see-more {
-  width: 60px;
-  height: 30px;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border: none;
-  color: white;
-  line-height: 30px;
-  position: absolute;
-  text-align: center;
   text-transform: uppercase;
 }
 

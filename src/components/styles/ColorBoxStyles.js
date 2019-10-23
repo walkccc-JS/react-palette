@@ -1,4 +1,6 @@
-export default styles = {
+import chroma from 'chroma-js';
+
+export default {
   ColorBox: {
     width: '20%',
     height: props => (props.showingFullPalette ? '25%' : '50%'),

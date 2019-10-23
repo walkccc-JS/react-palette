@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import ColorBox from './ColorBox';
+import Footer from './Footer';
 import './Palette.css';
 
 class Palette extends Component {
@@ -36,10 +37,7 @@ class Palette extends Component {
           changeFormat={this.changeFormat}
         />
         <div className="Palette-colors">{colorBoxes}</div>
-        <footer className="Palette-footer">
-          {paletteName}
-          <span className="emoji">{emoji}</span>
-        </footer>
+        <Footer paletteName={paletteName} emoji={emoji} />
       </div>
     );
   }

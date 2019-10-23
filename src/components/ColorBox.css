@@ -8,6 +8,10 @@
   position: relative;
 }
 
+.SingleColorPalette .ColorBox {
+  height: 50%;
+}
+
 .copy-button {
   width: 100px;
   height: 30px;

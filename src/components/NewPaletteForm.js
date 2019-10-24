@@ -105,6 +105,10 @@ function NewPaletteForm(props) {
     resetNewColorName();
   };
 
+  const removeColor = colorName => {
+    setColors(colors.filter(color => color.name !== colorName));
+  };
+
   const handleSubmit = () => {
     const paletteName = newPaletteName;
     const newPalette = {
@@ -227,6 +231,7 @@ function NewPaletteForm(props) {
             color={color.color}
             name={color.name}
             key={color.name}
+            handleClick={() => removeColor(color.name)}
           />
         ))}
       </main>

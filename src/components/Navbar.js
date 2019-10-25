@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'rc-slider';
-import { Select } from '@material-ui/core';
-import { MenuItem } from '@material-ui/core';
-import { Snackbar } from '@material-ui/core';
-import { IconButton } from '@material-ui/core';
+import { IconButton, MenuItem, Select, Snackbar } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import { withStyles } from '@material-ui/styles';
+import useStyles from './styles/NavbarStyles';
 import 'rc-slider/assets/index.css';
-import styles from './styles/NavbarStyles';
 
-function Navbar({
-  classes,
-  level,
-  showingAllColors,
-  changeLevel,
-  changeFormat
-}) {
+function Navbar({ level, showingAllColors, changeLevel, changeFormat }) {
+  const classes = useStyles();
   const [format, setFormat] = useState('hex');
   const [open, setOpen] = useState(false);
 
@@ -26,9 +17,7 @@ function Navbar({
     changeFormat(e.target.value);
   };
 
-  const closeSnackbar = () => {
-    setOpen(false);
-  };
+  const closeSnackbar = () => setOpen(false);
 
   return (
     <header className={classes.Navbar}>
@@ -57,14 +46,12 @@ function Navbar({
       </div>
       <Snackbar
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        open={open}
         autoHideDuration={3000}
+        ContentProps={{ 'aria-describedby': 'message-id' }}
         message={
           <span id="message-id">Format changed to {format.toUpperCase()}</span>
         }
-        ContentProps={{
-          'aria-describedby': 'message-id'
-        }}
+        open={open}
         onClose={closeSnackbar}
         action={[
           <IconButton
@@ -76,9 +63,9 @@ function Navbar({
             <CloseIcon />
           </IconButton>
         ]}
-      ></Snackbar>
+      />
     </header>
   );
 }
 
-export default withStyles(styles)(Navbar);
+export default Navbar;

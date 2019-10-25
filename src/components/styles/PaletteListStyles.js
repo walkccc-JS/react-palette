@@ -1,4 +1,6 @@
-export default {
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles({
   root: {
     height: '100vh',
     backgroundColor: 'blue',
@@ -30,4 +32,4 @@ export default {
     gridTemplateColumns: 'repeat(3, 30%)',
     gridGap: '5%'
   }
-};
+});

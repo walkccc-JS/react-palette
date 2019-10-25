@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MiniPalette from './MiniPalette';
-import { withStyles } from '@material-ui/styles';
-import styles from './styles/PaletteListStyles';
+import useStyles from './styles/PaletteListStyles';
 
-function PaletteList({ classes, palettes, deletePalette, history }) {
-  const goToPalette = id => {
-    history.push(`/palette/${id}`);
-  };
+function PaletteList({ palettes, deletePalette, history }) {
+  const classes = useStyles();
+
+  const goToPalette = id => history.push(`/palette/${id}`);
 
   return (
     <div className={classes.root}>
@@ -32,4 +31,4 @@ function PaletteList({ classes, palettes, deletePalette, history }) {
   );
 }
 
-export default withStyles(styles)(PaletteList);
+export default PaletteList;

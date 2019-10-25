@@ -7,7 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import CasinoIcon from '@material-ui/icons/Casino';
 import DraggableColorBoxList from './DraggableColorBoxList';
 import { arrayMove } from 'react-sortable-hoc';
 import useStyles from './styles/NewPaletteFormStyles';
@@ -86,23 +87,31 @@ function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
           </IconButton>
         </div>
         <Divider />
-        <Typography variant="h4">Design your palette</Typography>
-        <Button variant="contained" color="secondary" onClick={clearColors}>
-          Clear palette
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          disabled={isPaletteFull}
-          onClick={addRandomColor}
-        >
-          Random color
-        </Button>
-        <ColorPickerForm
-          colors={colors}
-          isPaletteFull={isPaletteFull}
-          addColor={addColor}
-        />
+        <div className={classes.container}>
+          <Typography variant="h2" gutterBottom>
+            Design your palette
+          </Typography>
+          <ColorPickerForm
+            colors={colors}
+            isPaletteFull={isPaletteFull}
+            addColor={addColor}
+          />
+          <div className={classes.buttons}>
+            <DeleteIcon
+              variant="contained"
+              color="secondary"
+              onClick={clearColors}
+              className={classes.button}
+            />
+            <CasinoIcon
+              variant="contained"
+              color="primary"
+              disabled={isPaletteFull}
+              onClick={addRandomColor}
+              className={classes.button}
+            />
+          </div>
+        </div>
       </Drawer>
       <main
         className={clsx(classes.content, {

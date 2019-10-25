@@ -11,10 +11,13 @@ export default makeStyles(theme => ({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
+    height: '100vh'
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    display: 'flex',
+    alignItems: 'center'
   },
   drawerHeader: {
     display: 'flex',
@@ -39,5 +42,20 @@ export default makeStyles(theme => ({
       duration: theme.transitions.duration.enteringScreen
     }),
     marginLeft: 0
-  }
+  },
+  container: {
+    width: '90%',
+    height: '90%',
+    display: 'flex',
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  },
+  buttons: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  button: {}
 }));

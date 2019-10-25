@@ -40,7 +40,10 @@ function Navbar({
       </Link>
       {showingAllColors && (
         <div>
-          <span style={{ fontFamily: 'Montserrat', marginLeft: '1rem' }}>
+          <span
+            style={{ fontFamily: 'Montserrat', marginLeft: '1rem' }}
+            className={classes.level}
+          >
             Level: {level}
           </span>
           <Slider

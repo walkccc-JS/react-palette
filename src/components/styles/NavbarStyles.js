@@ -22,6 +22,11 @@ export default {
       display: props => (props.showingAllColors ? 'none' : '')
     }
   },
+  level: {
+    [sizes.down('xs')]: {
+      display: 'none'
+    }
+  },
   slider: {
     width: '300px',
     margin: '0 10px',

@@ -1,6 +1,8 @@
 import chroma from 'chroma-js';
 import sizes from './sizes';
 
+const buttonRange = 38;
+
 export default {
   ColorBox: {
     width: '20%',
@@ -20,22 +22,21 @@ export default {
       height: props => (props.showingFullPalette ? '10%' : '20%')
     },
     [sizes.down('xs')]: {
-      width: '100%',
-      height: props => (props.showingFullPalette ? '5%' : '10%')
+      width: props => (props.showingFullPalette ? '20%' : '100%'),
+      height: props => (props.showingFullPalette ? '25%' : '10%')
     }
   },
   buttons: {
-    left: '40%',
-    right: '40%',
-    top: '40%',
-    bottom: '40%',
+    left: `${buttonRange}%`,
+    right: `${buttonRange}%`,
+    top: `${buttonRange}%`,
+    bottom: `${buttonRange}%`,
     position: 'absolute',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     [sizes.down('xs')]: {
-      left: '80%',
-      right: '5%'
+      flexDirection: 'column'
     }
   },
   moreButton: {
@@ -72,5 +73,10 @@ export default {
     letterSpacing: '1px',
     position: 'absolute',
     textTransform: 'uppercase'
+  },
+  colorName: {
+    [sizes.down('xs')]: {
+      display: 'none'
+    }
   }
 };

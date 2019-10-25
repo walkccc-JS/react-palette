@@ -1,6 +1,6 @@
 export default {
   Navbar: {
-    height: '6vh',
+    height: '5%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start'

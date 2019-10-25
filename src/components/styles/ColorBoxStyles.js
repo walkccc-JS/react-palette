@@ -15,11 +15,11 @@ export default {
     },
     [sizes.down('lg')]: {
       width: '25%',
-      height: props => (props.showingFullPalette ? '20%' : '50%')
+      height: props => (props.showingFullPalette ? '20%' : '33.3%')
     },
     [sizes.down('md')]: {
       width: '50%',
-      height: props => (props.showingFullPalette ? '10%' : '50%')
+      height: props => (props.showingFullPalette ? '10%' : '20%')
     },
     [sizes.down('xs')]: {
       width: '100%',
@@ -124,7 +124,10 @@ export default {
       fontWeight: '400',
       textAlign: 'center',
       textTransform: 'uppercase',
-      textShadow: '2px 2px black'
+      textShadow: '2px 2px black',
+      [sizes.down('xs')]: {
+        fontSize: '5rem'
+      }
     },
     '& p': {
       fontWeight: '100',

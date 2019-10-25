@@ -46,7 +46,7 @@ export default {
     fontSize: '1.2rem',
     opacity: 0,
     '&:hover': {
-      transform: 'scale(1.5)',
+      transform: 'scale(1.3)',
       transition: 'all 0.2s ease-in-out'
     }
   },
@@ -58,7 +58,7 @@ export default {
     fontSize: '1.2rem',
     opacity: 0,
     '&:hover': {
-      transform: 'scale(1.5)',
+      transform: 'scale(1.3)',
       transition: 'all 0.2s ease-in-out'
     }
   },

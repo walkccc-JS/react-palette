@@ -1,43 +1,30 @@
 import React, { useState } from 'react';
+import { arrayMove } from 'react-sortable-hoc';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
+import DraggableColorBoxList from './DraggableColorBoxList';
 import clsx from 'clsx';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CasinoIcon from '@material-ui/icons/Casino';
-import DraggableColorBoxList from './DraggableColorBoxList';
-import { arrayMove } from 'react-sortable-hoc';
 import useStyles from './styles/NewPaletteFormStyles';
 
-NewPaletteForm.defaultProps = {
-  maxColors: 20
-};
+NewPaletteForm.defaultProps = { maxColors: 20 };
 
 function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
   const classes = useStyles();
-  const [open, setOpen] = useState(true);
+  const [drawerOpened, setDrawerOpened] = useState(true);
   const [colors, setColors] = useState([]);
   const isPaletteFull = colors.length >= maxColors;
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  const handleDrawerOpen = () => setDrawerOpened(true);
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const handleDrawerClose = () => setDrawerOpened(false);
 
-  const addColor = newColor => {
-    setColors([...colors, newColor]);
-  };
-
-  const removeColor = colorName => {
-    setColors(colors.filter(color => color.name !== colorName));
-  };
+  const addColor = newColor => setColors([...colors, newColor]);
 
   const addRandomColor = () => {
     const allColors = palettes.map(palette => palette.colors).flat();
@@ -46,9 +33,10 @@ function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
     setColors([...colors, randomColor]);
   };
 
-  const clearColors = () => {
-    setColors([]);
-  };
+  const removeColor = colorName =>
+    setColors(colors.filter(color => color.name !== colorName));
+
+  const removeAllColors = () => setColors([]);
 
   const handleSubmit = newPalette => {
     newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, '-');
@@ -57,33 +45,31 @@ function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
     history.push('/');
   };
 
-  const onSortEnd = ({ oldIndex, newIndex }) => {
+  const onSortEnd = ({ oldIndex, newIndex }) =>
     setColors(arrayMove(colors, oldIndex, newIndex));
-  };
 
   return (
     <div className={classes.root}>
       <PaletteFormNav
         palettes={palettes}
-        open={open}
-        handleSubmit={handleSubmit}
+        open={drawerOpened}
         handleDrawerOpen={handleDrawerOpen}
+        handleSubmit={handleSubmit}
       />
       <Drawer
-        className={classes.drawer}
-        variant="persistent"
         anchor="left"
-        open={open}
+        variant="persistent"
+        open={drawerOpened}
         classes={{
           paper: classes.drawerPaper
         }}
+        className={classes.drawer}
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider />
         <div className={classes.container}>
           <Typography variant="h2" gutterBottom>
             Design your palette
@@ -95,14 +81,14 @@ function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
           />
           <div className={classes.buttons}>
             <DeleteIcon
-              variant="contained"
               color="secondary"
-              onClick={clearColors}
+              variant="contained"
+              onClick={removeAllColors}
               className={classes.button}
             />
             <CasinoIcon
-              variant="contained"
               color="primary"
+              variant="contained"
               disabled={isPaletteFull}
               onClick={addRandomColor}
               className={classes.button}
@@ -112,14 +98,14 @@ function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
       </Drawer>
       <main
         className={clsx(classes.content, {
-          [classes.contentShift]: open
+          [classes.contentShift]: drawerOpened
         })}
       >
         <div className={classes.drawerHeader} />
         <DraggableColorBoxList
+          axis="xy"
           colors={colors}
           removeColor={removeColor}
-          axis="xy"
           onSortEnd={onSortEnd}
         />
       </main>

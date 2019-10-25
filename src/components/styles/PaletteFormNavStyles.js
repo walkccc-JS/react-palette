@@ -12,6 +12,7 @@ export default makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     }),
+    alignItem: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
@@ -27,5 +28,13 @@ export default makeStyles(theme => ({
     marginLeft: 12,
     marginRight: 20
   },
-  navButtons: {}
+  navButtons: {
+    marginRight: '1rem',
+    '& a': {
+      textDecoration: 'none'
+    }
+  },
+  button: {
+    margin: '0 0.5rem'
+  }
 }));

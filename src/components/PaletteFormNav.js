@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import PaletteMetaForm from './PaletteMetaForm';
 import clsx from 'clsx';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -8,21 +9,10 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import { useInput } from './hooks/InputHook';
 import useStyles from './styles/PaletteFormNavStyles';
 
 function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
   const classes = useStyles();
-  const { value: newPaletteName, bind: bindNewPaletteName } = useInput('');
-
-  useEffect(() => {
-    ValidatorForm.addValidationRule('isPaletteNameUnique', value =>
-      palettes.every(
-        ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
-      )
-    );
-  });
 
   return (
     <div className={classes.root}>
@@ -49,20 +39,7 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
           </Typography>
         </Toolbar>
         <div className={classes.navButtons}>
-          <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
-            <TextValidator
-              label="Palette Name"
-              {...bindNewPaletteName}
-              validators={['required', 'isPaletteNameUnique']}
-              errorMessages={[
-                'Enter a palette name',
-                'Palette name must be unique'
-              ]}
-            />
-            <Button variant="contained" color="primary" type="submit">
-              Save palette
-            </Button>
-          </ValidatorForm>
+          <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
           <Link to="/">
             <Button variant="contained" color="secondary">
               Go back

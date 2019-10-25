@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { withStyles } from '@material-ui/styles';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import ViewComfyIcon from '@material-ui/icons/ViewComfy';
 import styles from './styles/ColorBoxStyles';
 
 function ColorBox({ classes, name, background, moreUrl, showingFullPalette }) {
@@ -34,14 +36,15 @@ function ColorBox({ classes, name, background, moreUrl, showingFullPalette }) {
           <div className={classes.boxContent}>
             <span className={classes.colorName}>{name}</span>
           </div>
-          <button className={classes.copyButton}>Copy</button>
+          <div className={classes.buttons}>
+            <FileCopyIcon className={classes.copyButton} />
+            {showingFullPalette && (
+              <Link to={moreUrl} onClick={e => e.stopPropagation()}>
+                <ViewComfyIcon className={classes.moreButton} />
+              </Link>
+            )}
+          </div>
         </div>
-
-        {showingFullPalette && (
-          <Link to={moreUrl} onClick={e => e.stopPropagation()}>
-            <span className={classes.seeMore}>More</span>
-          </Link>
-        )}
       </div>
     </CopyToClipboard>
   );

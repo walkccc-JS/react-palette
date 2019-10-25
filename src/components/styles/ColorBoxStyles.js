@@ -10,7 +10,7 @@ export default {
     cursor: 'pointer',
     display: 'inline-block',
     position: 'relative',
-    '&:hover button': {
+    '&:hover svg': {
       opacity: 1
     },
     [sizes.down('lg')]: {
@@ -38,47 +38,46 @@ export default {
         ? 'white'
         : 'rgba(0, 0, 0, 0.5)'
   },
-  seeMore: {
+  buttons: {
+    left: '40%',
+    right: '40%',
+    top: '40%',
+    bottom: '40%',
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    [sizes.down('xs')]: {
+      left: '80%',
+      right: '5%'
+    }
+  },
+  moreButton: {
     color: props =>
       chroma(props.background).luminance() >= 0.5
         ? 'rgba(0, 0, 0, 0.5)'
         : 'white',
-    width: '60px',
-    height: '30px',
-    right: '0',
-    bottom: '0',
-    background: 'rgba(255, 255, 255, 0.3)',
-    border: 'none',
-    lineHeight: '30px',
-    position: 'absolute',
-    textAlign: 'center',
-    textTransform: 'uppercase'
+    fontSize: '1.2rem',
+    opacity: 0,
+    '&:hover': {
+      transform: 'scale(1.5)',
+      transition: 'all 0.2s ease-in-out'
+    }
   },
   copyButton: {
     color: props =>
       chroma(props.background).luminance() >= 0.5
         ? 'rgba(0, 0, 0, 0.5)'
         : 'white',
-    width: '100px',
-    height: '30px',
-    marginLeft: '-50px',
-    marginTop: '-15px',
-    left: '50%',
-    top: '50%',
-    background: 'rgba(255, 255, 255, 0.3)',
-    border: 'none',
-    display: 'inline-block',
-    fontSize: '1rem',
-    lineHeight: '30px',
-    opacity: '0',
-    outline: 'none',
-    position: 'absolute',
-    textAlign: 'center',
-    textDecoration: 'none',
-    textTransform: 'uppercase'
+    fontSize: '1.2rem',
+    opacity: 0,
+    '&:hover': {
+      transform: 'scale(1.5)',
+      transition: 'all 0.2s ease-in-out'
+    }
   },
   boxContent: {
-    width: '50%',
+    width: '70%',
     left: '0',
     bottom: '0',
     padding: '10px',

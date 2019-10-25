@@ -4,7 +4,7 @@ import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/PaletteListStyles';
 
-function PaletteList({ classes, palettes, history }) {
+function PaletteList({ classes, palettes, deletePalette, history }) {
   const goToPalette = id => {
     history.push(`/palette/${id}`);
   };
@@ -20,7 +20,10 @@ function PaletteList({ classes, palettes, history }) {
           {palettes.map(palette => (
             <MiniPalette
               {...palette}
+              key={palette.id}
+              id={palette.id}
               handleClick={() => goToPalette(palette.id)}
+              handleDelete={deletePalette}
             />
           ))}
         </div>

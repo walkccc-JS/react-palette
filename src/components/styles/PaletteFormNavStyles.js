@@ -1,10 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { DRAWER_WIDTH } from '../constants';
 
-const drawerWidth = 300;
+const drawerWidth = DRAWER_WIDTH;
 
 export default makeStyles(theme => ({
   root: {
     display: 'flex'
+  },
+  hide: {
+    display: 'none'
   },
   appBar: {
     height: '64px',

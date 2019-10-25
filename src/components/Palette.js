@@ -36,7 +36,7 @@ function Palette({ classes, palette }) {
         changeLevel={changeLevel}
         changeFormat={changeFormat}
       />
-      <div className={classes.colors}>{colorBoxes}</div>
+      <div className={classes.colorBoxesContainer}>{colorBoxes}</div>
       <Footer paletteName={paletteName} emoji={emoji} />
     </div>
   );

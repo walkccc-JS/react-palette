@@ -5,8 +5,6 @@ export default {
   ColorBox: {
     width: '20%',
     height: props => (props.showingFullPalette ? '25%' : '50%'),
-    margin: '0 auto',
-    marginBottom: '-3.5px',
     cursor: 'pointer',
     display: 'inline-block',
     position: 'relative',

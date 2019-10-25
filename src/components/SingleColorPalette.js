@@ -40,7 +40,7 @@ function SingleColorPalette({ classes, palette, colorId }) {
   return (
     <div className={classes.Palette}>
       <Navbar showingAllColors={false} changeFormat={changeFormat} />
-      <div className={classes.colors}>
+      <div className={classes.colorBoxesContainer}>
         {colorBoxes}
         <div className={classes.goBack}>
           <Link to={`/palette/${id}`}>Go back</Link>

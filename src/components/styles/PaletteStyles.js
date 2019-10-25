@@ -7,8 +7,10 @@ export default {
     display: 'flex',
     flexDirection: 'column'
   },
-  colors: {
-    height: '90%'
+  colorBoxesContainer: {
+    height: '90%',
+    display: 'flex',
+    flexWrap: 'wrap'
   },
   goBack: {
     width: '20%',

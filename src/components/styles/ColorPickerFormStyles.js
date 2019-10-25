@@ -1,7 +1,6 @@
 export default {
   picker: {
-    width: '100% !important',
-    marginTop: '2rem'
+    width: '100% !important'
   },
   colorNameInput: {
     width: '100%'

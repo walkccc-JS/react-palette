@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import ChromePicker from 'react-color';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
-import ChromePicker from 'react-color';
 import { useInput } from './hooks/InputHook';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/ColorPickerFormStyles';
 
 function ColorPickerForm({ classes, colors, isPaletteFull, addColor }) {
-  const [currentColor, setCurrentColor] = useState('teal');
+  const [color, setColor] = useState('teal');
   const {
     value: newColorName,
     bind: bindNewColorName,
     reset: resetNewColorName
   } = useInput('');
 
-  const updateCurrentColor = newColor => {
-    setCurrentColor(newColor.hex);
-  };
+  const updateColor = newColor => setColor(newColor.hex);
 
   const handleSubmit = () => {
     const newColor = {
-      color: currentColor,
+      color: color,
       name: newColorName
     };
     addColor(newColor);
@@ -32,36 +30,36 @@ function ColorPickerForm({ classes, colors, isPaletteFull, addColor }) {
       colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
     );
     ValidatorForm.addValidationRule('isColorUnique', () =>
-      colors.every(({ color }) => color !== currentColor)
+      colors.every(({ color }) => color !== color)
     );
   });
 
   return (
     <div>
       <ChromePicker
-        color={currentColor}
-        onChangeComplete={updateCurrentColor}
+        color={color}
+        onChangeComplete={updateColor}
         className={classes.picker}
       />
       <ValidatorForm onSubmit={handleSubmit}>
         <TextValidator
+          margin="normal"
+          placeholder="Color name"
           validators={['required', 'isColorNameUnique', 'isColorUnique']}
           errorMessages={[
             'Enter a color name',
             'Color name must be unique',
             'Color already be used'
           ]}
-          margin="normal"
-          placeholder="Color name"
-          {...bindNewColorName}
           className={classes.colorNameInput}
+          {...bindNewColorName}
         />
         <Button
-          variant="contained"
           color="primary"
           type="submit"
+          variant="contained"
           disabled={isPaletteFull}
-          style={{ backgroundColor: isPaletteFull ? 'gray' : currentColor }}
+          style={{ backgroundColor: isPaletteFull ? 'gray' : color }}
           className={classes.addColorButton}
         >
           {isPaletteFull ? 'Palette is full' : 'Add color'}

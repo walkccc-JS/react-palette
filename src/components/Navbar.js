@@ -10,10 +10,15 @@ import { withStyles } from '@material-ui/styles';
 import 'rc-slider/assets/index.css';
 import styles from './styles/NavbarStyles';
 
-function Navbar(props) {
+function Navbar({
+  classes,
+  level,
+  showingAllColors,
+  changeLevel,
+  changeFormat
+}) {
   const [format, setFormat] = useState('hex');
   const [open, setOpen] = useState(false);
-  const { classes, level, showingAllColors, changeLevel, changeFormat } = props;
 
   const handleFormatChange = e => {
     setFormat(e.target.value);

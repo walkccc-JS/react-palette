@@ -36,8 +36,7 @@ const useStyles = makeStyles({
   }
 });
 
-const DraggableColorBox = SortableElement(props => {
-  const { color, name, handleClick } = props;
+const DraggableColorBox = SortableElement(({ color, name, handleClick }) => {
   const classes = useStyles();
 
   return (

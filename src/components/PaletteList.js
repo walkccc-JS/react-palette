@@ -4,11 +4,9 @@ import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/PaletteListStyles';
 
-function PaletteList(props) {
-  const { classes, palettes } = props;
-
+function PaletteList({ classes, palettes, history }) {
   const goToPalette = id => {
-    props.history.push(`/palette/${id}`);
+    history.push(`/palette/${id}`);
   };
 
   return (

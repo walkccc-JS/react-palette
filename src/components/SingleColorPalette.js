@@ -19,11 +19,10 @@ const gatherShades = (palette, colorId) => {
   return shades.slice(1);
 };
 
-function SingleColorPalette(props) {
-  const { classes } = props;
-  const { paletteName, emoji, id } = props.palette;
+function SingleColorPalette({ classes, palette, colorId }) {
+  const { paletteName, emoji, id } = palette;
   const [format, setFormat] = useState('hex');
-  const shades = gatherShades(props.palette, props.colorId);
+  const shades = gatherShades(palette, colorId);
 
   const changeFormat = format => {
     setFormat(format);

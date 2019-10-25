@@ -4,9 +4,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/ColorBoxStyles';
 
-function ColorBox(props) {
+function ColorBox({ classes, name, background, moreUrl, showingFullPalette }) {
   const [copied, setCopied] = useState(false);
-  const { classes, name, background, moreUrl, showingFullPalette } = props;
 
   const changeCopyState = () => {
     setCopied(true);

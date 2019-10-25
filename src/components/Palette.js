@@ -5,9 +5,8 @@ import Footer from './Footer';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/PaletteStyles';
 
-function Palette(props) {
-  const { classes } = props;
-  const { colors, paletteName, emoji, id } = props.palette;
+function Palette({ classes, palette }) {
+  const { colors, paletteName, emoji, id } = palette;
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState('hex');
 

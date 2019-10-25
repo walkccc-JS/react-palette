@@ -1,6 +1,7 @@
 export default {
   Palette: {
     height: '100%',
+    width: '100%',
     display: 'flex',
     flexDirection: 'column'
   },

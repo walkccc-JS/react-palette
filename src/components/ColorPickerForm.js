@@ -7,18 +7,20 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/ColorPickerFormStyles';
 
 function ColorPickerForm({ classes, colors, isPaletteFull, addColor }) {
-  const [color, setColor] = useState('teal');
+  const [currentColor, setCurrentColor] = useState('teal');
   const {
     value: newColorName,
     bind: bindNewColorName,
     reset: resetNewColorName
   } = useInput('');
 
-  const updateColor = newColor => setColor(newColor.hex);
+  const updateColor = newColor => {
+    setCurrentColor(newColor.hex);
+  };
 
   const handleSubmit = () => {
     const newColor = {
-      color: color,
+      color: currentColor,
       name: newColorName
     };
     addColor(newColor);
@@ -30,14 +32,14 @@ function ColorPickerForm({ classes, colors, isPaletteFull, addColor }) {
       colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
     );
     ValidatorForm.addValidationRule('isColorUnique', () =>
-      colors.every(({ color }) => color !== color)
+      colors.every(({ color }) => color !== currentColor)
     );
   });
 
   return (
     <div>
       <ChromePicker
-        color={color}
+        color={currentColor}
         onChangeComplete={updateColor}
         className={classes.picker}
       />
@@ -59,7 +61,7 @@ function ColorPickerForm({ classes, colors, isPaletteFull, addColor }) {
           type="submit"
           variant="contained"
           disabled={isPaletteFull}
-          style={{ backgroundColor: isPaletteFull ? 'gray' : color }}
+          style={{ backgroundColor: isPaletteFull ? 'gray' : currentColor }}
           className={classes.addColorButton}
         >
           {isPaletteFull ? 'Palette is full' : 'Add color'}

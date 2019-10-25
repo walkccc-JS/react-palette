@@ -7,8 +7,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import Button from '@material-ui/core/Button';
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import useStyles from './styles/PaletteFormNavStyles';
 
 function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
@@ -16,6 +16,7 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
   const [formShowing, setFormShowing] = useState(false);
 
   const showForm = () => setFormShowing(true);
+
   const hideForm = () => setFormShowing(false);
 
   return (
@@ -30,10 +31,10 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
       >
         <Toolbar>
           <IconButton
-            color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            color="inherit"
             edge="start"
+            onClick={handleDrawerOpen}
             className={clsx(classes.menuButton, {
               [classes.hide]: open
             })}
@@ -47,16 +48,16 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
         <div className={classes.navButtons}>
           <Link to="/">
             <Button
-              variant="contained"
               color="secondary"
+              variant="contained"
               className={classes.button}
             >
               Go back
             </Button>
           </Link>
           <Button
-            variant="contained"
             color="primary"
+            variant="contained"
             onClick={showForm}
             className={classes.button}
           >
@@ -67,8 +68,8 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
       {formShowing && (
         <PaletteMetaForm
           palettes={palettes}
-          handleSubmit={handleSubmit}
           hideForm={hideForm}
+          handleSubmit={handleSubmit}
         />
       )}
     </div>

@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'rc-slider';
+import logo from '../logo.svg';
 import { IconButton, MenuItem, Select, Snackbar } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import useStyles from './styles/NavbarStyles';
+import { withStyles } from '@material-ui/styles';
+import styles from './styles/NavbarStyles';
 import 'rc-slider/assets/index.css';
 
-function Navbar({ level, showingAllColors, changeLevel, changeFormat }) {
-  const classes = useStyles();
+function Navbar({
+  classes,
+  level,
+  showingAllColors,
+  changeLevel,
+  changeFormat
+}) {
   const [format, setFormat] = useState('hex');
   const [open, setOpen] = useState(false);
 
@@ -21,12 +28,21 @@ function Navbar({ level, showingAllColors, changeLevel, changeFormat }) {
 
   return (
     <header className={classes.Navbar}>
-      <div className={classes.logo}>
-        <Link to="/">react palette</Link>
-      </div>
+      <Link to="/" className={classes.logo}>
+        <img
+          src={logo}
+          alt="logo"
+          width="30"
+          height="30"
+          style={{ marginLeft: '0.5rem', marginRight: '0.5rem' }}
+        />
+        <span className={classes.siteName}>React Palette</span>
+      </Link>
       {showingAllColors && (
         <div>
-          <span>Level: {level}</span>
+          <span style={{ fontFamily: 'Montserrat', marginLeft: '1rem' }}>
+            Level: {level}
+          </span>
           <Slider
             defaultValue={level}
             min={100}
@@ -39,9 +55,9 @@ function Navbar({ level, showingAllColors, changeLevel, changeFormat }) {
       )}
       <div className={classes.selectContainer}>
         <Select value={format} onChange={handleFormatChange}>
-          <MenuItem value="hex">HEX - #ffffff</MenuItem>
-          <MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
-          <MenuItem value="rgba">RGBA - rgba(255, 255, 255, 1.0)</MenuItem>
+          <MenuItem value="hex">HEX</MenuItem>
+          <MenuItem value="rgb">RGB</MenuItem>
+          <MenuItem value="rgba">RGBA</MenuItem>
         </Select>
       </div>
       <Snackbar
@@ -68,4 +84,4 @@ function Navbar({ level, showingAllColors, changeLevel, changeFormat }) {
   );
 }
 
-export default Navbar;
+export default withStyles(styles)(Navbar);

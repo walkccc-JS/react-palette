@@ -11,6 +11,7 @@ export default makeStyles({
   colorBoxesContainer: {
     height: '90%',
     display: 'flex',
+    alignContent: 'flex-start',
     flexWrap: 'wrap'
   },
   goBack: {

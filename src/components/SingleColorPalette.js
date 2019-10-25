@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import ColorBox from './ColorBox';
 import Footer from './Footer';
-import { withStyles } from '@material-ui/styles';
-import styles from './styles/PaletteStyles';
+import useStyles from './styles/PaletteStyles';
 
 const gatherShades = (palette, colorId) => {
   let shades = [];
@@ -19,21 +18,20 @@ const gatherShades = (palette, colorId) => {
   return shades.slice(1);
 };
 
-function SingleColorPalette({ classes, palette, colorId }) {
+function SingleColorPalette({ palette, colorId }) {
+  const classes = useStyles();
   const { paletteName, emoji, id } = palette;
   const [format, setFormat] = useState('hex');
   const shades = gatherShades(palette, colorId);
 
-  const changeFormat = format => {
-    setFormat(format);
-  };
+  const changeFormat = format => setFormat(format);
 
   const colorBoxes = shades.map(color => (
     <ColorBox
+      showingFullPalette={false}
       key={color.hex}
       name={color.name}
       background={color[format]}
-      showingFullPalette={false}
     />
   ));
 
@@ -51,4 +49,4 @@ function SingleColorPalette({ classes, palette, colorId }) {
   );
 }
 
-export default withStyles(styles)(SingleColorPalette);
+export default SingleColorPalette;

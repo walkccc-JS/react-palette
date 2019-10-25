@@ -1,6 +1,7 @@
+import { makeStyles } from '@material-ui/core/styles';
 import sizes from './sizes';
 
-export default {
+export default makeStyles({
   Palette: {
     height: '100%',
     width: '100%',
@@ -54,4 +55,4 @@ export default {
       height: '10%'
     }
   }
-};
+});

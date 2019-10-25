@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-palette/static/css/main.00907d78.chunk.css",
+    "main.js": "/react-palette/static/js/main.d8fbc5c3.chunk.js",
+    "main.js.map": "/react-palette/static/js/main.d8fbc5c3.chunk.js.map",
+    "runtime-main.js": "/react-palette/static/js/runtime-main.3a076bf5.js",
+    "runtime-main.js.map": "/react-palette/static/js/runtime-main.3a076bf5.js.map",
+    "static/css/2.5774dd83.chunk.css": "/react-palette/static/css/2.5774dd83.chunk.css",
+    "static/js/2.88338402.chunk.js": "/react-palette/static/js/2.88338402.chunk.js",
+    "static/js/2.88338402.chunk.js.map": "/react-palette/static/js/2.88338402.chunk.js.map",
+    "index.html": "/react-palette/index.html",
+    "precache-manifest.567c044829d6d2b2aa074366993ac594.js": "/react-palette/precache-manifest.567c044829d6d2b2aa074366993ac594.js",
+    "service-worker.js": "/react-palette/service-worker.js",
+    "static/css/2.5774dd83.chunk.css.map": "/react-palette/static/css/2.5774dd83.chunk.css.map",
+    "static/css/main.00907d78.chunk.css.map": "/react-palette/static/css/main.00907d78.chunk.css.map",
+    "static/media/logo.svg": "/react-palette/static/media/logo.74e82c65.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a076bf5.js",
+    "static/css/2.5774dd83.chunk.css",
+    "static/js/2.88338402.chunk.js",
+    "static/css/main.00907d78.chunk.css",
+    "static/js/main.d8fbc5c3.chunk.js"
+  ]
+}

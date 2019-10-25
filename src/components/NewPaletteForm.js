@@ -66,7 +66,6 @@ function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
   return (
     <div className={classes.root}>
       <PaletteFormNav
-        classes={classes}
         palettes={palettes}
         open={open}
         handleSubmit={handleSubmit}

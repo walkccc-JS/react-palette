@@ -41,7 +41,7 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
           >
             <AddToPhotosIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap className={classes.createPaletteText}>
             Create a palette
           </Typography>
         </Toolbar>
@@ -52,7 +52,7 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
               variant="contained"
               className={classes.button}
             >
-              Go back
+              Back
             </Button>
           </Link>
           <Button

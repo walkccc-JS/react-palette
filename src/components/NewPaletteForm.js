@@ -11,13 +11,14 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CasinoIcon from '@material-ui/icons/Casino';
 import useStyles from './styles/NewPaletteFormStyles';
+import seedPalettes from '../config/seedPalettes';
 
 NewPaletteForm.defaultProps = { maxColors: 20 };
 
 function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
   const classes = useStyles();
   const [drawerOpened, setDrawerOpened] = useState(true);
-  const [colors, setColors] = useState([]);
+  const [colors, setColors] = useState(seedPalettes[4].colors);
   const isPaletteFull = colors.length >= maxColors;
 
   const handleDrawerOpen = () => setDrawerOpened(true);

@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import sizes from './sizes';
+import bg from './bg.svg';
 
 export default makeStyles({
   root: {
@@ -7,10 +8,16 @@ export default makeStyles({
     backgroundColor: 'blue',
     display: 'flex',
     alignItems: 'flex-start',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#4192cc',
+    backgroundImage: `url(${bg})`,
+    /* background by SVGBackgrounds.com */
+    backgroundSize: '2000px ',
+    overflowX: 'hidden'
   },
   container: {
     width: '50%',
+    paddingBottom: '2rem',
     display: 'flex',
     alignItems: 'flex-start',
     flexDirection: 'column',

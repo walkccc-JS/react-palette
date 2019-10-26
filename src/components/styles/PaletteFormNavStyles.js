@@ -39,14 +39,23 @@ export default makeStyles(theme => ({
     }
   },
   navButtons: {
+    width: '150px',
     marginRight: '1rem',
     '& a': {
       textDecoration: 'none'
     },
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    [sizes.down('xs')]: {
+      marginRight: '0.5rem'
+    }
   },
   button: {
-    margin: '0 0.5rem'
+    width: '60px',
+    margin: '0 0.5rem',
+    [sizes.down('xs')]: {
+      margin: '0 0.2rem',
+      padding: '0.3rem'
+    }
   }
 }));

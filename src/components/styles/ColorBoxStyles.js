@@ -68,7 +68,7 @@ export default {
     left: '0',
     bottom: '0',
     padding: '10px',
-    color: 'black',
+    color: 'rgba(0, 0, 0, 0.5)',
     fontSize: '12px',
     letterSpacing: '1px',
     position: 'absolute',

@@ -38,6 +38,7 @@ export default makeStyles({
     position: 'absolute',
     textTransform: 'uppercase',
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'space-between'
   },
   deleteIcon: {

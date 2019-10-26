@@ -29,7 +29,7 @@ function PaletteFormNav({ palettes, open, handleSubmit, handleDrawerOpen }) {
           [classes.appBarShift]: open
         })}
       >
-        <Toolbar>
+        <Toolbar disableGutters={!open}>
           <IconButton
             aria-label="open drawer"
             color="inherit"

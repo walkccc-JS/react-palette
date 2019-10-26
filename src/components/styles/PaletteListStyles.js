@@ -5,7 +5,6 @@ import bg from './bg.svg';
 export default makeStyles({
   root: {
     height: '100vh',
-    backgroundColor: 'blue',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center',

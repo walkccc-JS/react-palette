@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles({
   root: {
     backgroundColor: 'white',
-    border: '1px solid black',
     borderRadius: '5px',
     padding: '0.5rem',
     position: 'relative',
@@ -43,7 +42,6 @@ export default makeStyles({
     marginLeft: '0.5rem',
     fontSize: '1.5rem'
   },
-
   deleteIcon: {
     color: 'white',
     backgroundColor: '#eb3d30',

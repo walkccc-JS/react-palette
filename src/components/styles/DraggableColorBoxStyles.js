@@ -41,6 +41,11 @@ export default makeStyles({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
+  colorName: {
+    [sizes.down('sm')]: {
+      display: 'none'
+    }
+  },
   deleteIcon: {
     color: 'rgba(0, 0, 0, 0.5)',
     transition: 'all 0.3s ease-in-out'

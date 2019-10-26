@@ -14,7 +14,6 @@ export default {
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    fontFamily: 'Montserrat',
     fontSize: '22px',
     fontWeight: '600',
     color: 'black',

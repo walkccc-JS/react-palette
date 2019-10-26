@@ -106,6 +106,7 @@ function NewPaletteForm({ maxColors, palettes, savePalette, history }) {
         <DraggableColorBoxList
           axis="xy"
           colors={colors}
+          distance={20}
           removeColor={removeColor}
           onSortEnd={onSortEnd}
         />

@@ -1,8 +1,11 @@
 import sizes from './sizes';
+import { BANNER_HEIGHT } from '../constants';
+
+const bannerHeight = BANNER_HEIGHT;
 
 export default {
   Navbar: {
-    height: '5%',
+    height: `${bannerHeight}%`,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start'

@@ -1,5 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { BANNER_HEIGHT } from '../constants';
 import sizes from './sizes';
+
+const bannerHeight = BANNER_HEIGHT;
 
 export default makeStyles({
   Palette: {
@@ -9,7 +12,7 @@ export default makeStyles({
     flexDirection: 'column'
   },
   colorBoxesContainer: {
-    height: '90%',
+    height: `calc(100% - ${2 * bannerHeight}%)`,
     display: 'flex',
     alignContent: 'flex-start',
     flexWrap: 'wrap'

@@ -1,8 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { BANNER_HEIGHT } from '../constants';
+
+const bannerHeight = BANNER_HEIGHT;
 
 export default makeStyles({
   Footer: {
-    height: '5%',
+    height: `${bannerHeight}%`,
     background: 'white',
     display: 'flex',
     alignItems: 'center',

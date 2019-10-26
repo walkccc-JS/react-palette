@@ -21,7 +21,7 @@ function MiniPalette({
     <div
       key={color.name}
       style={{ backgroundColor: color.color }}
-      className={classes.miniColor}
+      className={classes.miniColorBox}
     />
   ));
 
@@ -34,7 +34,7 @@ function MiniPalette({
           className={classes.deleteIcon}
         />
       </div>
-      <div className={classes.colors}>{miniColorBoxes}</div>
+      <div className={classes.miniColorBoxesContainer}>{miniColorBoxes}</div>
       <h5 className={classes.title}>
         {paletteName} <span className={classes.emjoi}>{emoji}</span>
       </h5>

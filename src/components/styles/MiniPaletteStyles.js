@@ -13,12 +13,21 @@ export default makeStyles({
       opacity: 1
     }
   },
-  colors: {
+  miniColorBoxesContainer: {
     width: '100%',
     height: '150px',
     backgroundColor: '#dae1e4',
     borderRadius: '5px',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    display: 'flex',
+    alignContent: 'flex-start',
+    flexWrap: 'wrap'
+  },
+  miniColorBox: {
+    width: '20%',
+    height: '25%',
+    display: 'inline-block',
+    position: 'relative'
   },
   title: {
     margin: '0',
@@ -34,14 +43,7 @@ export default makeStyles({
     marginLeft: '0.5rem',
     fontSize: '1.5rem'
   },
-  miniColor: {
-    width: '20%',
-    height: '25%',
-    margin: '0 auto',
-    marginBottom: '-3.5px',
-    display: 'inline-block',
-    position: 'relative'
-  },
+
   deleteIcon: {
     color: 'white',
     backgroundColor: '#eb3d30',

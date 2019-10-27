@@ -34,7 +34,7 @@ export default {
     position: 'absolute',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     [sizes.down('xs')]: {
       flexDirection: 'column'
     }

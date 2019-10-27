@@ -43,7 +43,7 @@ export default {
     color: props =>
       chroma(props.background).luminance() >= 0.5
         ? 'rgba(0, 0, 0, 0.5)'
-        : 'white',
+        : 'rgba(255, 255, 255, 0.8)',
     fontSize: '1.2rem',
     opacity: 0,
     '&:hover': {
@@ -55,7 +55,7 @@ export default {
     color: props =>
       chroma(props.background).luminance() >= 0.5
         ? 'rgba(0, 0, 0, 0.5)'
-        : 'white',
+        : 'rgba(255, 255, 255, 0.8)',
     fontSize: '1.2rem',
     opacity: 0,
     '&:hover': {
@@ -75,6 +75,10 @@ export default {
     textTransform: 'uppercase'
   },
   colorName: {
+    color: props =>
+      chroma(props.background).luminance() <= 0.08
+        ? 'rgba(255, 255, 255, 0.8)'
+        : 'rgba(0, 0, 0, 0.5)',
     [sizes.down('xs')]: {
       display: 'none'
     }

@@ -33,9 +33,9 @@ export default makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    color: 'white',
+    color: 'rgba(255, 255, 255, 0.8)',
     '& a': {
-      color: 'white'
+      color: 'rgba(255, 255, 255, 0.8)'
     }
   },
   palettes: {

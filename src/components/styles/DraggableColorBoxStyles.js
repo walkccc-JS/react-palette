@@ -11,7 +11,7 @@ export default makeStyles({
     display: 'inline-block',
     position: 'relative',
     '&:hover svg': {
-      color: 'white',
+      color: 'rgba(255, 255, 255, 0.8)',
       transform: 'scale(1.2)'
     },
     [sizes.down('lg')]: {
@@ -42,6 +42,7 @@ export default makeStyles({
     justifyContent: 'space-between'
   },
   colorName: {
+    color: 'rgba(0, 0, 0, 0.5)',
     [sizes.down('sm')]: {
       display: 'none'
     }

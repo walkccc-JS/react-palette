@@ -28,7 +28,7 @@ export default makeStyles({
     position: 'relative',
     background: 'rgba(0, 0, 0, 0.9)',
     '& a': {
-      color: 'white',
+      color: 'rgba(255, 255, 255, 0.8)',
       width: '100px',
       height: '30px',
       marginLeft: '-50px',

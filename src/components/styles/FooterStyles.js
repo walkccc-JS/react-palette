@@ -6,7 +6,7 @@ const bannerHeight = BANNER_HEIGHT;
 export default makeStyles({
   Footer: {
     height: `${bannerHeight}%`,
-    background: 'white',
+    background: 'rgba(255, 255, 255, 0.8)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
